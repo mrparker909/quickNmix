@@ -4,12 +4,12 @@
 \name{asymNmix-package}
 \alias{asymNmix}
 \alias{asymNmix-package}
-\title{asymNmix: What the Package Does (One Line, Title Case)}
+\title{asymNmix: Asymptotic N-mixture Model Fitting}
 \description{
-What the package does (one paragraph).
+asymNmix is an R package made to aid in fitting asymptotic N-mixture models.
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Matthew RP Parker \email{mrparker909@gmail.com} (\href{https://orcid.org/0000-0003-3021-7959}{ORCID})
 
 }
 \keyword{internal}

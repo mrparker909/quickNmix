@@ -1,0 +1,12 @@
+#' Ancient Murrelet Chick Counts
+#'
+#' @description Parker et al. (2020) include a data set collected by the 
+#' Laskeek Bay Conservation Society on yearly Ancient Murrelet chick counts
+#' from the year 1990 to 2006. The data is collected for six sampling sites
+#' on East Limestone Island.
+#' 
+#' @references Parker, M.R.P., Pattison, V. & Cowen, L.L.E. Estimating population abundance using counts from an auxiliary population. Environ Ecol Stat 27, 509–526 (2020). https://doi.org/10.1007/s10651-020-00455-3
+#'
+#' @format A data frame with 6 rows and 17 columns. Each row represents a sampling location, and each column represents a sampling occasion:
+#' @source Parker et al. (2020) \url{https://doi.org/10.1007/s10651-020-00455-3}
+"anmu"
