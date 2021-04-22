@@ -1,5 +1,5 @@
 ---
-title: "Introduction to asymNmix"
+title: "Introduction to quickNmix"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Introduction}
@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(asymNmix)
+library(quickNmix)
 ```
 
 

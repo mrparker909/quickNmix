@@ -10,18 +10,18 @@ Authors@R:
       person(given = "Lloyd",
             family = "Elliott",
             role = c("aut"),
-            email = "",
-            comment = c(ORCID = "")),
+            email = "lloyd_elliott@sfu.ca",
+            comment = c(ORCID = "0000-0003-2187-7314")),
       person(given = "Laura LE",
             family = "Cowen",
             role = c("aut"),
-            email = "",
-            comment = c(ORCID = "")),
+            email = "lcowen@uvic.ca",
+            comment = c(ORCID = "0000-0002-0853-1450")),
       person(given = "Jiguo",
             family = "Cao",
             role = c("aut"),
-            email = "",
-            comment = c(ORCID = "")) )
+            email = "jiguo_cao@sfu.ca",
+            comment = c(ORCID = "0000-0001-7417-6330")) )
 Description: quickNmix is an R package made to aid in fitting asymptotic N-mixture models.
 License: MIT + file LICENSE
 Encoding: UTF-8

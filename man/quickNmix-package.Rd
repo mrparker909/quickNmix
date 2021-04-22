@@ -13,9 +13,9 @@ quickNmix is an R package made to aid in fitting asymptotic N-mixture models.
 
 Authors:
 \itemize{
-  \item Lloyd Elliott
-  \item Laura LE Cowen
-  \item Jiguo Cao
+  \item Lloyd Elliott \email{lloyd_elliott@sfu.ca} (\href{https://orcid.org/0000-0003-2187-7314}{ORCID})
+  \item Laura LE Cowen \email{lcowen@uvic.ca} (\href{https://orcid.org/0000-0002-0853-1450}{ORCID})
+  \item Jiguo Cao \email{jiguo_cao@sfu.ca} (\href{https://orcid.org/0000-0001-7417-6330}{ORCID})
 }
 
 }

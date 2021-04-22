@@ -20,6 +20,6 @@ from the year 1990 to 2006. The data is collected for six sampling sites
 on East Limestone Island.
 }
 \references{
-Parker, M.R.P., Pattison, V. & Cowen, L.L.E. Estimating population abundance using counts from an auxiliary population. Environ Ecol Stat 27, 509–526 (2020). https://doi.org/10.1007/s10651-020-00455-3
+Parker, M.R.P., Pattison, V. & Cowen, L.L.E. Estimating population abundance using counts from an auxiliary population. Environ Ecol Stat 27, 509–526 (2020). \url{https://doi.org/10.1007/s10651-020-00455-3}
 }
 \keyword{datasets}
