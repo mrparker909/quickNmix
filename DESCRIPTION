@@ -1,13 +1,28 @@
-Package: asymNmix
+Package: quickNmix
 Title: Asymptotic N-mixture Model Fitting
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "Matthew RP",
-           family = "Parker",
-           role = c("aut", "cre"),
-           email = "mrparker909@gmail.com",
-           comment = c(ORCID = "0000-0003-3021-7959"))
-Description: asymNmix is an R package made to aid in fitting asymptotic N-mixture models.
+    c(person(given = "Matthew RP",
+            family = "Parker",
+            role = c("aut", "cre"),
+            email = "mrparker909@gmail.com",
+            comment = c(ORCID = "0000-0003-3021-7959")),
+      person(given = "Lloyd",
+            family = "Elliott",
+            role = c("aut"),
+            email = "",
+            comment = c(ORCID = "")),
+      person(given = "Laura LE",
+            family = "Cowen",
+            role = c("aut"),
+            email = "",
+            comment = c(ORCID = "")),
+      person(given = "Jiguo",
+            family = "Cao",
+            role = c("aut"),
+            email = "",
+            comment = c(ORCID = "")) )
+Description: quickNmix is an R package made to aid in fitting asymptotic N-mixture models.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
