@@ -47,7 +47,7 @@ nll <- function(par, nit, K, l_s_c=NULL, g_s_c=NULL, g_t_c=NULL, o_s_c=NULL, o_t
   # extract coefficients from par, setup covariate matrices (eg:lamb), and coefficient vectors (eg:B_l)
   lamb <- matrix(rep(1,times=R),ncol=1)
   B_l <- par[param_length]
-  if(!is.null(l_s_c)) { # Design matrix: rows are times, cols are covariate values
+  if(!is.null(l_s_c)) { # Design matrix: rows are sites, cols are covariate values
     lamb <- cbind(lamb, do.call(cbind, l_s_c)) 
     B_l  <- sapply(X = param_length - 1 + 1:(length(l_s_c)+1), FUN = function(X,par) { par[X] }, par=par)
   }
@@ -55,7 +55,7 @@ nll <- function(par, nit, K, l_s_c=NULL, g_s_c=NULL, g_t_c=NULL, o_s_c=NULL, o_t
   
   gamm <- matrix(rep(1,times=R),ncol=1)
   B_g <- par[param_length]
-  if(!is.null(g_s_c)) { # Design matrix: rows are times, cols are covariate values
+  if(!is.null(g_s_c)) { # Design matrix: rows are sites, cols are covariate values
     gamm <- cbind(gamm, do.call(cbind, g_s_c)) 
     B_g  <- sapply(X = param_length - 1 + 1:(length(g_s_c)+1), FUN = function(X,par) { par[X] }, par=par)
   }
@@ -71,7 +71,7 @@ nll <- function(par, nit, K, l_s_c=NULL, g_s_c=NULL, g_t_c=NULL, o_s_c=NULL, o_t
   
   omeg <- matrix(rep(1,times=R),ncol=1)
   B_o <- par[param_length]
-  if(!is.null(o_s_c)) { # Design matrix: rows are times, cols are covariate values
+  if(!is.null(o_s_c)) { # Design matrix: rows are sites, cols are covariate values
     omeg <- cbind(omeg, do.call(cbind, o_s_c)) 
     B_o  <- sapply(X = param_length - 1 + 1:(length(o_s_c)+1), FUN = function(X,par) { par[X] }, par=par)
   }
@@ -87,7 +87,7 @@ nll <- function(par, nit, K, l_s_c=NULL, g_s_c=NULL, g_t_c=NULL, o_s_c=NULL, o_t
   
   pdet <- matrix(rep(1,times=R),ncol=1)
   B_p <- par[param_length]
-  if(!is.null(p_s_c)) { # Design matrix: rows are times, cols are covariate values
+  if(!is.null(p_s_c)) { # Design matrix: rows are sites, cols are covariate values
     pdet <- cbind(pdet, do.call(cbind, p_s_c)) 
     B_p  <- sapply(X = param_length - 1 + 1:(length(p_s_c)+1), FUN = function(X,par) { par[X] }, par=par)
   }

@@ -23,7 +23,7 @@ RMERF (2020) \url{https://eaglewatch.ca}
 eagles
 }
 \description{
-Golden Eagle counts made by Rocky Mountain Eagle Research Foundation (RMERF). Counts are made during the spring from April 1st until March 22nd each year. Data is available from \url{https://eaglewatch.ca}.
+Golden Eagle counts for the years 1993 to 2020, collected by the Rocky Mountain Eagle Research Foundation (RMERF). Counts are made during the spring from April 1st until March 22nd each year. Data is available from \url{https://eaglewatch.ca}.
 }
 \references{
 Rocky Mountain Eagle Research Foundation (RMERF). EagleWatch.ca. (2020). \url{https://eaglewatch.ca}.
