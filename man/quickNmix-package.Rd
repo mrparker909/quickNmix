@@ -6,7 +6,7 @@
 \alias{quickNmix-package}
 \title{quickNmix: Asymptotic N-mixture Model Fitting}
 \description{
-quickNmix is an R package made to aid in fitting asymptotic N-mixture models.
+quickNmix aids in fitting asymptotic N-mixture models.
 }
 \author{
 \strong{Maintainer}: Matthew RP Parker \email{mrparker909@gmail.com} (\href{https://orcid.org/0000-0003-3021-7959}{ORCID})

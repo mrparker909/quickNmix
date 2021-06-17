@@ -1,4 +1,4 @@
 library(testthat)
-library(asymNmix)
+library(quickNmix)
 
-test_check("asymNmix")
+test_check("quickNmix")

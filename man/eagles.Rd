@@ -13,7 +13,11 @@ A data frame with 28 rows and 11 columns. Each row represents a spring observati
 \item{TotPrec}{total precipitation measured in mm}
 \item{UniqueObservers}{number of principle observers who performed observations}
 \item{PeterSherrington_Year}{indicator variable which is 1 for years in which Peter Sherrington was the most prevalent principle observer}
-\item{observerPC1-5}{top 5 principal component scores calculated from the top twelve most prevalent principal observers}
+\item{observerPC1}{top 5 principal component scores calculated from the top twelve most prevalent principal observers}
+\item{observerPC2}{top 5 principal component scores calculated from the top twelve most prevalent principal observers}
+\item{observerPC3}{top 5 principal component scores calculated from the top twelve most prevalent principal observers}
+\item{observerPC4}{top 5 principal component scores calculated from the top twelve most prevalent principal observers}
+\item{observerPC5}{top 5 principal component scores calculated from the top twelve most prevalent principal observers}
 }
 }
 \source{

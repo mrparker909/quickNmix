@@ -16,13 +16,13 @@
 #' @param method Optimization method, passed to optim function, options include: "BFGS", "Nelder-Mead", "CG". Default: "BFGS"
 #' @param ... Additional arguments passed to the optimization function optim. For example: `control = list(trace=1, REPORT=1, reltol=1e-10)`
 #' @return Returns the fitted model object.
-#' @details 
 #' @examples 
 #' \dontrun{
 #' if(interactive()){
 #'  #EXAMPLE1
 #'  }
 #' }
+#' @importFrom stats optim plogis
 #' @rdname fitNmix
 #' @export 
 fitNmix <- function(nit, K=NULL, starts=NULL, l_s_c=NULL, g_s_c=NULL, g_t_c=NULL, o_s_c=NULL, o_t_c=NULL, p_s_c=NULL, p_t_c=NULL, SMALL_a_CORRECTION=FALSE, VERBOSE=FALSE, outfile=NULL, method = "BFGS", ...) {

@@ -2,3 +2,6 @@
 ^LICENSE\.md$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^README_cache$
+^.Rhistory$
+^cran-comments.md$

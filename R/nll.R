@@ -18,6 +18,8 @@
 #' @param outfile Location of csv file to write/append parameter values, Default: NULL
 #' @return Returns the negative log likelihood function evaluated at par.
 #' @details DETAILS
+#' @importFrom stats plogis dbinom dnorm dpois
+#' @importFrom utils read.csv write.table
 #' @examples 
 #' \dontrun{
 #' if(interactive()){
@@ -176,8 +178,13 @@ nll <- function(par, nit, K, l_s_c=NULL, g_s_c=NULL, g_t_c=NULL, o_s_c=NULL, o_t
   }
   
   if(!is.null(outfile)) {
-    datcsv = data.frame(par1=par[1], par2=par[2], par3=par[3], par4=par[4], nll=-1*ll)
+    parnames = c(paste0("par", 1:length(par)), "nll")
+    parstate = c(par, -1*ll)
+    names(parstate) = parnames
+    datcsv = data.frame(t(parstate))
     if(file.exists(outfile)) {
+      checknames = colnames(read.csv(outfile))
+      if(!all(names(parstate)==checknames)) { warning(paste("oufile column names do not match new column names: ", outfile)) }
       write.table(datcsv, file = outfile, append = TRUE, col.names = FALSE, row.names = FALSE, sep = ",")
     } else {
       write.table(datcsv, file = outfile, col.names = TRUE, row.names = FALSE, sep = ",")
@@ -239,6 +246,7 @@ log_tp_MAT_lse <- function(M, omeg, gamm, corrections) {
 #'  }
 #' }
 #' @rdname Pab_asymptotic
+#' @importFrom stats pnorm
 Pab_asymptotic = function(a,b,omega,gamma, corrections = FALSE) {
   if(corrections) {
     # small a correction
@@ -357,6 +365,7 @@ Ax_log <- function(logA,logx) {
 #'  }
 #' }
 #' @rdname Pab_gamma
+#' @importFrom stats pnorm
 Pab_gamma = function(a, b, gamma) {
   if(gamma <= 0) { return(-Inf) }
   if(b==0) { return(dnorm(x = b, mean = gamma-0.5, sd = sqrt(gamma), log = T)) } # no summation
@@ -379,6 +388,7 @@ Pab_gamma = function(a, b, gamma) {
 #'  }
 #' }
 #' @rdname Pab_omega
+#' @importFrom stats pnorm
 Pab_omega = function(a, b, omega) {
   if(omega*a*(1-omega) <= 0) { ifelse(b==0, return(0), return(-Inf)) }
   if(b > a) { return(-Inf) }
