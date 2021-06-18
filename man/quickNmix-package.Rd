@@ -4,9 +4,9 @@
 \name{quickNmix-package}
 \alias{quickNmix}
 \alias{quickNmix-package}
-\title{quickNmix: Asymptotic N-mixture Model Fitting}
+\title{quickNmix: Asymptotic N-Mixture Model Fitting}
 \description{
-quickNmix aids in fitting asymptotic N-mixture models.
+For fitting asymptotic N-mixture models.
 }
 \author{
 \strong{Maintainer}: Matthew RP Parker \email{mrparker909@gmail.com} (\href{https://orcid.org/0000-0003-3021-7959}{ORCID})

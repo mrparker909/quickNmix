@@ -21,15 +21,15 @@ A data frame with 28 rows and 11 columns. Each row represents a spring observati
 }
 }
 \source{
-RMERF (2020) \url{https://eaglewatch.ca}
+RMERF (2020) EagleWatch.ca
 }
 \usage{
 eagles
 }
 \description{
-Golden Eagle counts for the years 1993 to 2020, collected by the Rocky Mountain Eagle Research Foundation (RMERF). Counts are made during the spring from April 1st until March 22nd each year. Data is available from \url{https://eaglewatch.ca}.
+Golden Eagle counts for the years 1993 to 2020, collected by the Rocky Mountain Eagle Research Foundation (RMERF). Counts are made during the spring from April 1st until March 22nd each year. Data is available from Eaglewatch.ca.
 }
 \references{
-Rocky Mountain Eagle Research Foundation (RMERF). EagleWatch.ca. (2020). \url{https://eaglewatch.ca}.
+Rocky Mountain Eagle Research Foundation (RMERF). EagleWatch.ca. (2020).
 }
 \keyword{datasets}

@@ -32,7 +32,7 @@ And the development version from [GitHub](https://github.com/) with:
 # install.packages("devtools")
 devtools::install_github("mrparker909/quickNmix")
 ```
-## Example
+## Example 1
 
 This is a basic example which shows how to fit a model with site varying lambda, and time varying pdet:
 
@@ -78,3 +78,25 @@ pdet estimates for each site and time:
 ```{r example_p6, cache=T}
 mod$model_results$estimate_matrices$pdet
 ```
+
+
+## Example 2
+
+This is a basic example which shows how you can use multiple cores to compute:
+
+```{r example2, cache=T}
+library(quickNmix)
+
+# uses library doParallel, here we use 2 cores
+doParallel::registerDoParallel(cores = 2) 
+
+tictoc::tic()
+nit  = anmu[c(2,5),1:12] # ancient murrelet chick counts
+mod2 = fitNmix(nit=nit, K=400)
+tictoc::toc()
+
+mod2
+```
+
+
+Multi-threading is implemented using R packages doParallel and foreach. Note that multi-threading is used to split the computation of the transition probability matrix by rows. This may not be efficient on some architectures, and will not be efficient for small K: efficiency increases with increasing K. Alternative choices for multi-core processing are being considered. 
