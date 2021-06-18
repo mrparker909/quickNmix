@@ -1,6 +1,6 @@
 Package: quickNmix
-Title: Asymptotic N-mixture Model Fitting
-Version: 0.0.1.0001
+Title: Asymptotic N-Mixture Model Fitting
+Version: 1.0.1.1001
 Authors@R: 
     c(person(given = "Matthew RP",
             family = "Parker",
@@ -22,7 +22,7 @@ Authors@R:
             role = c("aut"),
             email = "jiguo_cao@sfu.ca",
             comment = c(ORCID = "0000-0001-7417-6330")) )
-Description: quickNmix aids in fitting asymptotic N-mixture models.
+Description: For fitting asymptotic N-mixture models.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -37,4 +37,3 @@ Depends:
 Imports: 
     foreach,
     doParallel
-VignetteBuilder: knitr
