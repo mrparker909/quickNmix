@@ -1,4 +1,8 @@
-# quickNmix 0.0.1.0001
+# quickNmix 1.0.2
+
+* CRAN re-submission with minor documentation changes.
+
+# quickNmix 1.0.1.1001
 
 * CRAN submission
 

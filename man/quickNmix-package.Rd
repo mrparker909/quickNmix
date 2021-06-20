@@ -6,7 +6,7 @@
 \alias{quickNmix-package}
 \title{quickNmix: Asymptotic N-Mixture Model Fitting}
 \description{
-For fitting asymptotic N-mixture models.
+For fitting asymptotic N-mixture models. Asymptotic N-mixture models extend the work of Dail and Madsen (2011) <doi:10.1111/j.1541-0420.2010.01465.x>, to consider asymptotic solutions to the open population N-mixture models. The asymptotic models are derived and described in: "Parker, M.R.P., Elliott, L., Cowen, L.L.E., Cao, J. (2021). Asymptotic solutions for N-mixture models with count data [Manuscript in preparation]. Department of Statistics and Actuarial Sciences, Simon Fraser University.".
 }
 \author{
 \strong{Maintainer}: Matthew RP Parker \email{mrparker909@gmail.com} (\href{https://orcid.org/0000-0003-3021-7959}{ORCID})

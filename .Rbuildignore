@@ -3,5 +3,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^README_cache$
-^.Rhistory$
+^\.Rhistory$
+^\.RData$
 ^cran-comments.md$
+^\.gitignore$
