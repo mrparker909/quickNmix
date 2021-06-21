@@ -1,10 +1,9 @@
 
 ## Resubmission
-This is a resubmission, based on feedback from Uwe Ligges. In this version I have:
+This is a resubmission, based on feedback from Gregor Seyer. In this version I have:
 
-* Extended the DESCRIPTION description to include a reference to a N-mixture models manuscript, and a reference to the asymptotic paper, which is currently in preparation (there is no hyperlink available for this reference at this time).
-* Changed the version number to a more reasonable value: version 1.0.2.
-* Updated the package date to 2021-06-20
+* added an example/test for the exported function fitNmix
+* added an example/test for the exported function nll
   
 ## Test environments
 * local: Windows 10 install, R 4.1.0

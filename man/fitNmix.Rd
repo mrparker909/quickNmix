@@ -60,9 +60,6 @@ Returns the fitted model object.
 Fit an open population N-mixture model using the asymptotic approximation. The four parameters are mean initial site abundance lambda, mean recruitments gamma, survival probability omega, and probability of detection pdet. Parameters can be made to vary over sites and over times by including parameter covariates. Note that this function is essentially a wrapper for optim acting on the nll function.
 }
 \examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
-}
+nit = matrix(c(1,1,0,1,1), nrow=1) # observations for 1 site, 5 sampling occassions
+model1 = fitNmix(nit, K=10)        # fit the model with population upper bound K=10
 }

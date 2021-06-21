@@ -57,9 +57,8 @@ Computes the negative log likelihood function for the open population asymptotic
 DETAILS
 }
 \examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
-}
+nit = matrix(c(1,1,0,1,1), nrow=1) # observations for 1 site, 5 sampling occassions
+par = c(1,1,1,0) # parameter values at which to calculate the negative log likelihood (nll)
+nll(par, nit, K=10) # nll with K=10
+nll(par, nit, K=10, SMALL_a_CORRECTION=TRUE) # nll with small a correction
 }

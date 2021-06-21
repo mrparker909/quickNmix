@@ -1,3 +1,7 @@
+# quickNmix 1.0.3
+
+* CRAN re-submission with test example added for fitNmix and for nll.
+
 # quickNmix 1.0.2
 
 * CRAN re-submission with minor documentation changes.

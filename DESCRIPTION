@@ -1,6 +1,6 @@
 Package: quickNmix
 Title: Asymptotic N-Mixture Model Fitting
-Version: 1.0.2
+Version: 1.0.3
 Date: 2021-06-20
 Maintainer: Matthew RP Parker <mrparker909@gmail.com>
 Authors@R: 
