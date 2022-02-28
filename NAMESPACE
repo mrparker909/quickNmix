@@ -3,6 +3,7 @@
 export(fitNmix)
 export(fitNmixPara)
 export(nll)
+export(pCountOpenFFT)
 importFrom(foreach,foreach)
 importFrom(stats,dbinom)
 importFrom(stats,dnorm)
