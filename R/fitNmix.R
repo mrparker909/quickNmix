@@ -17,8 +17,10 @@
 #' @param ... Additional arguments passed to the optimization function optim. For example: `control = list(trace=1, REPORT=1, reltol=1e-10)`
 #' @return Returns the fitted model object.
 #' @examples 
+#' if (interactive()) {
 #' nit = matrix(c(1,1,0,1,1), nrow=1) # observations for 1 site, 5 sampling occassions
-#' model1 = fitNmix(nit, K=10)        # fit the model with population upper bound K=10
+#' model1 = fitNmix(nit, K=2)        # fit the model with population upper bound K=2
+#' }
 #' @importFrom stats optim plogis
 #' @rdname fitNmix
 #' @export 

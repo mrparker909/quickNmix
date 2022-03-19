@@ -1,4 +1,4 @@
-# quickNmix 1.0.4
+# quickNmix 1.1.1
 
 * Updated parallel computing capabilities by adding fitNmixPara (uses optimParallel)
 * Added new functions for FFT N-mixture computing: pCountOpenFFT

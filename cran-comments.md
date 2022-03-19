@@ -1,9 +1,14 @@
 
-## Resubmission
-This is a resubmission, based on feedback from Gregor Seyer. In this version I have:
+## Submission
 
-* added an example/test for the exported function fitNmix
-* added an example/test for the exported function nll
+This submission is a package update from 1.0.3 to 1.1.1. In this version I have:
+
+* added the function fitNmixPara
+* added the function pCountOpenFFT
+  
+## Reverse Dependencies Check
+
+* there were no reverse dependencies
   
 ## Test environments
 * local: Windows 10 install, R 4.1.0
@@ -11,11 +16,10 @@ This is a resubmission, based on feedback from Gregor Seyer. In this version I h
 * rhub: Fedora Linux, R-devel, clang, gfortran
 
 ## R CMD check results
-There is one NOTE to ignore, as these are correctly spelled surnames:  
-Possibly mis-spelled words in DESCRIPTION:  
-  Cao (27:336)  
-  Cowen (27:321)  
-  Dail (27:102)  
-  Madsen (27:111)  
+
+-- R CMD check results -------------- quickNmix 1.1.1 ----
+Duration: 24.5s
+
+0 errors √ | 0 warnings √ | 0 notes √
   
 There were no ERRORs, WARNINGs, or other NOTEs. 

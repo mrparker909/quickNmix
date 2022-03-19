@@ -44,7 +44,7 @@ pCountOpenFFT(
 
 \item{VERBOSE}{If TRUE, will print additional information during model fitting, Default: FALSE}
 
-\item{outfile}{Location of csv file to write/append parameter values, can be used to checkpoint long running model fits. Default: NULL}
+\item{outfile}{Location of csv file to write/append parameter values, can be used to checkpoint long running model fits. Default: NULL (no csv file created).}
 
 \item{method}{Optimization method, passed to optim function, options include: "BFGS", "Nelder-Mead", "CG". Default: "BFGS"}
 
@@ -57,17 +57,20 @@ Returns the fitted model object.
 Fit an open population N-mixture model using the FFT method of computing the Transition Probability matrix. The four parameters are mean initial site abundance lambda, mean recruitments gamma, survival probability omega, and probability of detection pdet. Parameters can be made to vary over sites and over times by including parameter covariates. Note that this function is essentially a wrapper for optim acting on the nll_FFT function.
 }
 \examples{
+if (interactive()) {
 # No Covariates
 nit = matrix(c(1,1,0,2,3), nrow=1) # observations for 1 site, 5 sampling occassions
 model1 = pCountOpenFFT(nit, K=10)  # fit the model with population upper bound K=10
 
 # Site Covariates
 o_s_c = list(cov1=c(0,0,1)) # omega site covariates, cov1 is categorical
-nit = matrix(c(1,1,0,2,3, 1,0,1,3,2, 4,1,3,2,0), nrow=3, byrow=T) # observations for 3 sites, 5 sampling occassions
+nit = matrix(c(1,1,0,2,3, 
+               1,0,1,3,2, 
+               4,1,3,2,0), nrow=3, byrow=T) # 3 sites, 5 sampling occassions
 model2 = pCountOpenFFT(nit, K=20, o_s_c=o_s_c) # fit the model with population upper bound K=20
 
 # Time Covariates
-g_t_c = list(temp=c(0.5,0.3,0.6,0.7,NA)) # only the first T-1=4 values will be used since these are transition covariates
+g_t_c = list(temp=c(0.5,0.3,0.6,0.7,NA)) # transition covariates: only first T-1=4 values used 
 model3 = pCountOpenFFT(nit, K=10, g_t_c=g_t_c)  # fit the model with population upper bound K=10
-
+}
 }

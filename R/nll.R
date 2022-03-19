@@ -21,10 +21,12 @@
 #' @importFrom stats plogis dbinom dnorm dpois
 #' @importFrom utils read.csv write.table
 #' @examples 
+#' if (interactive()) {
 #' nit = matrix(c(1,1,0,1,1), nrow=1) # observations for 1 site, 5 sampling occassions
 #' par = c(1,1,1,0) # parameter values at which to calculate the negative log likelihood (nll)
 #' nll(par, nit, K=10) # nll with K=10
 #' nll(par, nit, K=10, SMALL_a_CORRECTION=TRUE) # nll with small a correction
+#' }
 #' @rdname nll
 #' @export 
 nll <- function(par, nit, K, l_s_c=NULL, g_s_c=NULL, g_t_c=NULL, o_s_c=NULL, o_t_c=NULL, p_s_c=NULL, p_t_c=NULL, SMALL_a_CORRECTION=FALSE, VERBOSE=FALSE, outfile=NULL) {

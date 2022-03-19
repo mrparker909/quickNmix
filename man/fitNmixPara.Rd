@@ -24,7 +24,7 @@ fitNmixPara(
 )
 }
 \arguments{
-\item{cluster}{}
+\item{cluster}{cluster object created using makeCluster, for example: \code{cl <- makeCluster(parallel::detectCores()-1)}}
 
 \item{nit}{Matrix of counts data. Rows represent sites, columns represent sampling occasions. Note that if the data is a vector, then it will be converted to a matrix with a single row.}
 
@@ -63,8 +63,10 @@ Returns the fitted model object.
 Fit an open population N-mixture model using the asymptotic approximation. The four parameters are mean initial site abundance lambda, mean recruitments gamma, survival probability omega, and probability of detection pdet. Parameters can be made to vary over sites and over times by including parameter covariates. Note that this function is essentially a wrapper for optim acting on the nll function.
 }
 \examples{
+if (interactive()) {
 cl <- makeCluster(parallel::detectCores()-1) # number of clusters should be 2*p+1 for optimal gains
 nit = matrix(c(1,1,0,1,1,2,2), nrow=1) # observations for 1 site, 7 sampling occassions
 model1 = fitNmixPara(cl, nit, K=100) # fit the model with population upper bound K=100
 parallel::stopCluster(cl)
+}
 }

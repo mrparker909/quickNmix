@@ -13,24 +13,27 @@
 #' @param p_s_c List of pdet site covariates, Default: NULL
 #' @param p_t_c List of pdet time covariates, Default: NULL
 #' @param VERBOSE If TRUE, will print additional information during model fitting, Default: FALSE
-#' @param outfile Location of csv file to write/append parameter values, can be used to checkpoint long running model fits. Default: NULL
+#' @param outfile Location of csv file to write/append parameter values, can be used to checkpoint long running model fits. Default: NULL (no csv file created).
 #' @param method Optimization method, passed to optim function, options include: "BFGS", "Nelder-Mead", "CG". Default: "BFGS"
 #' @param ... Additional arguments passed to the optimization function optim. For example: `control = list(trace=1, REPORT=1, reltol=1e-10)`
 #' @return Returns the fitted model object.
 #' @examples 
+#' if (interactive()) {
 #' # No Covariates
 #' nit = matrix(c(1,1,0,2,3), nrow=1) # observations for 1 site, 5 sampling occassions
 #' model1 = pCountOpenFFT(nit, K=10)  # fit the model with population upper bound K=10
 #' 
 #' # Site Covariates
 #' o_s_c = list(cov1=c(0,0,1)) # omega site covariates, cov1 is categorical
-#' nit = matrix(c(1,1,0,2,3, 1,0,1,3,2, 4,1,3,2,0), nrow=3, byrow=T) # observations for 3 sites, 5 sampling occassions
+#' nit = matrix(c(1,1,0,2,3, 
+#'                1,0,1,3,2, 
+#'                4,1,3,2,0), nrow=3, byrow=T) # 3 sites, 5 sampling occassions
 #' model2 = pCountOpenFFT(nit, K=20, o_s_c=o_s_c) # fit the model with population upper bound K=20
 #' 
 #' # Time Covariates
-#' g_t_c = list(temp=c(0.5,0.3,0.6,0.7,NA)) # only the first T-1=4 values will be used since these are transition covariates
+#' g_t_c = list(temp=c(0.5,0.3,0.6,0.7,NA)) # transition covariates: only first T-1=4 values used 
 #' model3 = pCountOpenFFT(nit, K=10, g_t_c=g_t_c)  # fit the model with population upper bound K=10
-#' 
+#' }
 #' @importFrom stats optim plogis
 #' @rdname pCountOpenFFT
 #' @export 
@@ -357,7 +360,6 @@ nll_FFT <- function(par, nit, K, l_s_c=NULL, g_s_c=NULL, g_t_c=NULL, o_s_c=NULL,
   param_length = param_length + length(B_pt)
   
   Y <- nit
-  
   g1_t_star <- list()
   g1_t      <- list()
   g1        <- list()
@@ -406,7 +408,6 @@ nll_FFT <- function(par, nit, K, l_s_c=NULL, g_s_c=NULL, g_t_c=NULL, o_s_c=NULL,
       }
       
       t_pdet = plogis(sum(B_p * pdet[i,], na.rm = T) + sum(B_pt * pdett[t,], na.rm = T))
-      
       ig1_t <- dbinom(x = Y[i,t], size = (0:iK), prob = t_pdet, log=F)
       ig1_t_star <- ig1_t * ig_star
       
@@ -426,12 +427,12 @@ nll_FFT <- function(par, nit, K, l_s_c=NULL, g_s_c=NULL, g_t_c=NULL, o_s_c=NULL,
   ###########################
   
   if(is.nan(ll)) { ll <- -Inf }
-  
   return(-1*ll)
 }
 
 
 # compute convolution in log space using FFT
+#' @importFrom stats convolve
 conv_log_FFT <- function(log_x,log_y) {
   m = max(log_x)
   n = max(log_y)
@@ -440,7 +441,6 @@ conv_log_FFT <- function(log_x,log_y) {
   
   conv = convolve(x, rev(y), type = "open")
   conv[which(conv < 0)] = 0
-  
   lconv = log(conv) + m + n
 }
 
@@ -449,8 +449,6 @@ tp_MAT <- function(M, omeg, gamm) {
   
   M <- foreach(row = 1:K, .combine = "rbind", .export = c("conv_log_FFT")) %dopar% {
     Mrow = M[row,]
-    conv = numeric(K)
-    
     if(row-1==0) { # only recruitments
       Mrow = dpois(0:(K-1),gamm,log=F)
     } else { # recruitments + survivals
@@ -458,6 +456,5 @@ tp_MAT <- function(M, omeg, gamm) {
       Mrow = exp(conv_log_FFT(dbinom(x = 0:(K-1),size = row-1, prob = omeg, log=TRUE), dpois(x = 0:(K-1),lambda = gamm, log=TRUE)))[1:K]
     }
   }
-  
   return(M)
 }

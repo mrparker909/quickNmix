@@ -1,6 +1,6 @@
 #' @title Fit Asymptotic N-mixture Model Using optimParallel
 #' @description Fit an open population N-mixture model using the asymptotic approximation. The four parameters are mean initial site abundance lambda, mean recruitments gamma, survival probability omega, and probability of detection pdet. Parameters can be made to vary over sites and over times by including parameter covariates. Note that this function is essentially a wrapper for optim acting on the nll function.
-#' @param cluster 
+#' @param cluster cluster object created using makeCluster, for example: `cl <- makeCluster(parallel::detectCores()-1)`
 #' @param nit Matrix of counts data. Rows represent sites, columns represent sampling occasions. Note that if the data is a vector, then it will be converted to a matrix with a single row.
 #' @param K Upper bound on summations in the likelihood function. K should be chosen large enough that the negative log likelihood function is stable (unchanging as K increases). If K=NULL, K=5*max(nit) will be used as default. Default: NULL
 #' @param starts Either NULL for default starting values, or a vector of parameter values: `c(log(lambda), log(gamma), logit(omega), logit(pdet))`. Note that the parameter vector will need to be longer by one for each parameter coefficient if covariate values are supplied. The order of coefficients is: `c(lambda, l_s_c, gamma, g_s_c, g_t_c, omega, o_s_c, o_t_c, pdet, p_s_c, p_t_c)`
@@ -18,11 +18,15 @@
 #' @param ... Additional arguments passed to the optimization function optimParallel.
 #' @return Returns the fitted model object.
 #' @examples 
+#' if (interactive()) {
 #' cl <- makeCluster(parallel::detectCores()-1) # number of clusters should be 2*p+1 for optimal gains
 #' nit = matrix(c(1,1,0,1,1,2,2), nrow=1) # observations for 1 site, 7 sampling occassions
 #' model1 = fitNmixPara(cl, nit, K=100) # fit the model with population upper bound K=100
 #' parallel::stopCluster(cl)
+#' }
+#' @import doParallel
 #' @importFrom stats optim plogis
+
 #' @rdname fitNmixPara
 #' @export 
 fitNmixPara <- function(cluster, nit, K=NULL, starts=NULL, l_s_c=NULL, g_s_c=NULL, g_t_c=NULL, o_s_c=NULL, o_t_c=NULL, p_s_c=NULL, p_t_c=NULL, SMALL_a_CORRECTION=FALSE, VERBOSE=FALSE, outfile=NULL, LowerBounds=NULL,...) {

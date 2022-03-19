@@ -7,7 +7,7 @@
 #' 
 #' @references Parker, M.R.P., Pattison, V. & Cowen, L.L.E. Estimating population abundance using counts from an auxiliary population. Environ Ecol Stat 27, 509–526 (2020). \doi{https://doi.org/10.1007/s10651-020-00455-3}
 #'
-#' @format A data frame with 6 rows and 17 columns. Each row represents a sampling location, and each column represents a sampling occasion:
+#' @format A matrix with 6 rows and 17 columns. Each row represents a sampling location, and each column represents a sampling occasion:
 #' @source Parker et al. (2020) \doi{https://doi.org/10.1007/s10651-020-00455-3}
 "anmu"
 

@@ -1,6 +1,6 @@
 Package: quickNmix
 Title: Asymptotic N-Mixture Model Fitting
-Version: 1.0.4
+Version: 1.1.1
 Date: 2022-02-28
 Maintainer: Matthew RP Parker <mrparker909@gmail.com>
 Authors@R: 
@@ -35,9 +35,9 @@ Suggests:
     knitr,
     rmarkdown
 Depends: 
-    R (>= 2.10),
-    parallel,
-    optimParallel
+    R (>= 2.10)
 Imports: 
     foreach,
-    doParallel
+    parallel,
+    optimParallel,
+    doParallel,
