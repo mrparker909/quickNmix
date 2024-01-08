@@ -30,6 +30,8 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+URL: https://github.com/mrparker909/quickNmix
+BugReports: https://github.com/mrparker909/quickNmix/issues
 Suggests: 
     testthat,
     knitr,
